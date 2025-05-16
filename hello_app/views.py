@@ -4,7 +4,6 @@ import os
 
 # Create the Flask application instance
 from . import app
-
 # Configure the database
 # Use SQLite 
 basedir = os.path.abspath(os.path.dirname(__file__))
