@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create New Post</title>
+</head>
+<body>
+    <h1>Create a New Blog Post</h1>
+
+    <form action="{{ url_for('create_post') }}" method="POST"> {# The form tag defines the form #}
+        <div>
+            <label for="title">Title:</label><br> {# Label for the input field #}
+            <input type="text" id="title" name="title" required> {# Text input field for the title #}
+        </div>
+        <br>
+        <div>
+            <label for="content">Content:</label><br>
+            <textarea id="content" name="content" rows="10" cols="50" required></textarea> {# Textarea for larger content #}
+        </div>
+        <br>
+        <div>
+            <button type="submit">Submit Post</button> {# Submit button #}
+        </div>
+    </form>
+
+    <p><a href="{{ url_for('index') }}">Cancel</a></p> {# Link back without submitting #}
+</body>
+</html>

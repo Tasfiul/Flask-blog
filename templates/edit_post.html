@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Post: {{ post.title }}</title> {# Use the post title in the page title #}
+</head>
+<body>
+    <h1>Edit Blog Post</h1>
+
+    {# Form action points to the edit route with the post ID #}
+    <form action="{{ url_for('edit_post', post_id=post.id) }}" method="POST">
+        <div>
+            <label for="title">Title:</label><br>
+            {# Pre-fill the title input with the current post title #}
+            <input type="text" id="title" name="title" value="{{ post.title }}" required>
+        </div>
+        <br>
+        <div>
+            <label for="content">Content:</label><br>
+            {# Pre-fill the content textarea with the current post content #}
+            <textarea id="content" name="content" rows="10" cols="50" required>{{ post.content }}</textarea>
+        </div>
+        <br>
+        <div>
+            <button type="submit">Update Post</button>
+        </div>
+    </form>
+
+    {# Link back without submitting - maybe back to the post's view page #}
+    <p><a href="{{ url_for('get_post', post_id=post.id) }}">Cancel</a></p>
+
+</body>
+</html>

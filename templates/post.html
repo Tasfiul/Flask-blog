@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ post.title }}</title>
+</head>
+<body>
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.content }}</p>
+
+    <p><a href="{{ url_for('index') }}">Back to all posts</a></p>
+    <p><a href="{{ url_for('edit_post', post_id=post.id) }}">Edit Post</a></p>
+
+    {# New: Add a form for the Delete button #}
+    <form action="{{ url_for('delete_post', post_id=post.id) }}" method="POST" style="display:inline;"> {# Use a form for the POST request #}
+        <button type="submit">Delete Post</button> {# The button triggers the form submission #}
+    </form>
+
+</body>
+</html>
