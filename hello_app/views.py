@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 import os
 
 # Create the Flask application instance
-app = Flask(__name__)
+from . import app
 
 # Configure the database
 # We'll use SQLite for simplicity - it's file-based
